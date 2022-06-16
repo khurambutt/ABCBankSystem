@@ -1,0 +1,74 @@
+﻿@model ABCBankSystem.Models.Transaction
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Transaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserID" class="control-label"></label>
+                <input asp-for="UserID" class="form-control" />
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccountID" class="control-label"></label>
+                <input asp-for="BankAccountID" class="form-control" />
+                <span asp-validation-for="BankAccountID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BankAccountNumber" class="control-label"></label>
+                <input asp-for="BankAccountNumber" class="form-control" />
+                <span asp-validation-for="BankAccountNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FromAccount" class="control-label"></label>
+                <input asp-for="FromAccount" class="form-control" />
+                <span asp-validation-for="FromAccount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToAccount" class="control-label"></label>
+                <input asp-for="ToAccount" class="form-control" />
+                <span asp-validation-for="ToAccount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactionType" class="control-label"></label>
+                <input asp-for="TransactionType" class="form-control" />
+                <span asp-validation-for="TransactionType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Balance" class="control-label"></label>
+                <input asp-for="Balance" class="form-control" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Details" class="control-label"></label>
+                <input asp-for="Details" class="form-control" />
+                <span asp-validation-for="Details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedOnDate" class="control-label"></label>
+                <input asp-for="CreatedOnDate" class="form-control" />
+                <span asp-validation-for="CreatedOnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
